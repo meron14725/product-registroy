@@ -10,6 +10,7 @@ before_install:
   - docker-compose up --build -d
 
 script:
+  - docker-compose exec web bundle install --jobs=3 --retry=3
   - docker-compose exec --env 'RAILS_ENV=test' web rails db:create
   - docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
   - docker-compose exec --env 'RAILS_ENV=test' web rails test
