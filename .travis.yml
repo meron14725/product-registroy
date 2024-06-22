@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - gem update --system 3.2.3  # RubyGemsを最新バージョンにアップデート
+  - gem update --system 3.3.22  # RubyGemsを最新バージョンにアップデート
   - gem install bundler -v 2.3.0 # Bundler 2.xをインストール
   - bundle config set --local deployment 'true'  # `--deployment` フラグの代替
   - docker-compose up --build -d
