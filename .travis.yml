@@ -1,8 +1,10 @@
 sudo: required
 
-services: docker
+services:
+  - docker
 
 before_install:
+  - gem install bundler -v 2.3.0 # Bundler 2.xをインストール
   - docker-compose up --build -d
 
 script:
